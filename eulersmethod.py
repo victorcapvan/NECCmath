@@ -5,6 +5,7 @@ import pprint
 def f(f: typing.Callable[[float, float], float], initial: tuple[float, float], h: float, n: int) -> None:
     (x, y) = initial
     result_list = []
+    result_list.append((0, x, y, f(x,y)))
     for i in range(n):
         f_n = f(x, y)
         y += h * f_n
