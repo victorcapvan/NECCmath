@@ -3,7 +3,7 @@ import numpy as np
 import pprint
 
 def f(f: typing.Callable[[float, float], float], initial: tuple[float, float], h: float, n: int) -> None:
-    x, y = initial
+    (x, y) = initial
     result_list = []
     for i in range(n):
         f_n = f(x, y)
