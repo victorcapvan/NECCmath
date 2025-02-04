@@ -1,11 +1,11 @@
 import numpy as np, pprint as pp, typing as t
 
-def f(f: t.Callable[[float, float], float], initial: tuple[float, float], h: float, n: int) -> None:
-    (x, y) = initial
-    result_list = [(0, x, y, f(x, y))]
+def f(f: t.Callable[[float, float], float], initial_conditions: tuple[float, float], h: float, n: int) -> None:
+    (x_n, y_n) = initial_conditions 
+    result_list = [(0, x_n, y_n, f(x_n, y_n))]
     for i in range(n):
-        (x, y) = (x + h, y + h * (f_n := f(x, y)))
-        result_list.append((i + 1, x, y, f_n))
+        (x_n, y_n) = (x_n + h, y_n + h * (f_n := f(x_n, y_n)))
+        result_list.append((i + 1, x_n, y_n, f_n))       
     pp.pprint(np.array(result_list))
     return
 
