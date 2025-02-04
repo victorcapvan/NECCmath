@@ -1,6 +1,4 @@
-import numpy as np
-import pprint as pp
-import typing as t
+import numpy as np, pprint as pp, typing as t
 
 def f(f: t.Callable[[float, float], float], initial: tuple[float, float], h: float, n: int) -> None:
     (x, y) = initial
