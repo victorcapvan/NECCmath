@@ -9,4 +9,4 @@ def f(f: t.Callable[[float, float], float], initial: tuple[float, float], h: flo
     pp.pprint(np.array(result_list))
     return
 
-f(lambda x, y: 9/x**2 - y/x - y**2, (2, -3/2), 0.1, 10)
+f(lambda x, y: (9/x**2) - (y/x) - y**2, (2, -3/2), 0.1, 10)
