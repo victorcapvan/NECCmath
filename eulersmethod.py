@@ -1,12 +1,20 @@
 import numpy as np, pprint as pp, typing as t
 
-def f(f: t.Callable[[float, float], float], initial_conditions: tuple[float, float], h: float, n: int) -> None:
-    (x_n, y_n) = initial_conditions 
-    result_list = [(0, x_n, y_n, f(x_n, y_n))]
+def f(f: t.Callable[[float, float], float], initial_conditions: tuple[float, float], h: float, n: int, show_all: bool = True) -> None:
+    (x_n, y_n), result_list = initial_conditions, [(0, *initial_conditions, f(*initial_conditions))]
     for i in range(n):
         (x_n, y_n) = (x_n + h, y_n + h * (f_n := f(x_n, y_n)))
-        result_list.append((i + 1, x_n, y_n, f_n))       
-    pp.pprint(np.array(result_list))
+        result_list.append((i + 1, x_n, y_n, f_n))     
+    pp.pprint(np.array(result_list)) if show_all else print(result_list[-1]); print("\n")
     return
 
-f(lambda x, y: (9/x**2) - (y/x) - y**2, (2, -3/2), 0.1, 10)
+# number 8 from 1.4
+f(lambda x, t: 1 - x**2, (0, 363), 0.0025, 300, False)
+
+# number 9 from 1.4
+# dT/dt = K(M(t) - T(t))
+f(lambda t, T: 0.04 * (294 - T), (0, 363), 0.1, 300, False)
+f(lambda t, T: 0.04 * (294 - T), (0, 363), 0.1, 600, False)
+
+# Shaun's number 4 from 1.4
+f(lambda x, y: (1/x**2) - (y/x) - y**2, (1, -1), 0.1, 10, True)
