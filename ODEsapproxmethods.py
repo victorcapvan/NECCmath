@@ -9,7 +9,6 @@ def eulersMethod(f: t.Callable[[float, float], float], initial_conditions: tuple
     pp.pprint(np.array(solution_set)) if show_all else print(solution_set[-1]); print("\n")
     return
 
-# number 8 from 1.4
 eulersMethod(lambda x, t: 1 - x**2, (0, 363), 0.0025, 300, False) # number 8 from 1.4
 
 # dT/dt = K(M(t) - T(t))
