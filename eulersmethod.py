@@ -1,7 +1,7 @@
 import typing as t
 
 def f(f: t.Callable[[float, float], float], initial_conditions: tuple[float, float], h: float, n: int, show_all: bool = True) -> None:
-    x_n, y_n = initial_conditions
+    (x_n, y_n) = initial_conditions
     solution_set = [(0, *initial_conditions, f(*initial_conditions))]
     for i in range(n):
         (x_n, y_n) = (x_n + h, y_n + h * (f_n := f(x_n, y_n)))
