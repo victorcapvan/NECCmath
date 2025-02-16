@@ -6,7 +6,7 @@ def eulersMethod(f: t.Callable[[float, float], float], initial_conditions: tuple
     for i in range(n):
         (x_n, y_n) = (x_n + h, y_n + h * (f_n := f(x_n, y_n)))
         solution_set.append((i + 1, x_n, y_n, f_n))     
-    pp.pprint(np.array(solution_set)) if show_all else print(solution_set[-1] + "\n")
+    pp.pprint(np.array(solution_set)) if show_all else print(solution_set[-1]); print("\n")
     return solution_set[-1][2]
 
 eulersMethod(lambda t, T: 0.04 * (294 - T), (0, 363), 0.1, 300, False) # dT/dt = K(M(t) - T(t))
