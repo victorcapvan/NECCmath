@@ -20,9 +20,7 @@ def eulers_method(f: typing.Callable[[float, float], float], initial_conditions:
         x_n = x_n + h
         solution_set.append((i + 1, x_n, y_n, f_n))
         
-    solution_set = [
-        (i, round(x, decimals), round(y, decimals), round(f_n, decimals))
-        for (i, x, y, f_n) in solution_set]
+    solution_set = [(i, round(x, decimals), round(y, decimals), round(f_n, decimals)) for (i, x, y, f_n) in solution_set]
     
     return np.array(solution_set)
 
