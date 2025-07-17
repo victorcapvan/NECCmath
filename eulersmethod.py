@@ -3,6 +3,7 @@ import pprint
 import typing
 
 def eulers_method(f: typing.Callable[[float, float], float], initial_conditions: tuple[float, float], h: float, n: int, decimals: int):
+    
     """
     @param f: function in terms of x, y
     @param initial_conditions: (x, y) as a tuple
