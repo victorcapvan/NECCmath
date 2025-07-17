@@ -25,13 +25,6 @@ def eulers_method(f: typing.Callable[[float, float], float], initial_conditions:
     
     return np.array(solution_set)
 
-pprint.pprint(
-    eulers_method(lambda x, y: (1/x**2) - (y/x) - y**2, (1, -1), 0.1, 25, 5)) # Shaun's number 4 from 1.4)
-
-pprint.pprint(
-    eulers_method(lambda x, y: (1/x**2) - (y/x) - y**2, (1, -1), 0.1, 10, 5)[-1]
-    )
-
-pprint.pprint(
-    eulers_method(lambda x, y: (1/x**2) - (y/x) - y**2, (1, -1), 0.1, 10, 5)[-1][2]
-    )
+pprint.pprint(eulers_method(lambda x, y: (1/x**2) - (y/x) - y**2, (1, -1), 0.1, 25, 5)) # Shaun's number 4 from 1.4)
+pprint.pprint(eulers_method(lambda x, y: (1/x**2) - (y/x) - y**2, (1, -1), 0.1, 10, 5)[-1])
+pprint.pprint(eulers_method(lambda x, y: (1/x**2) - (y/x) - y**2, (1, -1), 0.1, 10, 5)[-1][2])
