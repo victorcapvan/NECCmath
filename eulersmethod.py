@@ -17,8 +17,8 @@ def eulers_method(f: typing.Callable[[float, float], float], initial_conditions:
 
     for i in range(n):
         f_n = f(x_n, y_n)
-        y_n = y_n + h * f_n
         x_n = x_n + h
+        y_n = y_n + h * f_n
         solution_set.append((i + 1, x_n, y_n, f_n))
         
     solution_set = [(i, round(x, decimals), round(y, decimals), round(f_n, decimals)) for (i, x, y, f_n) in solution_set]
