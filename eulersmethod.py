@@ -2,7 +2,7 @@ import numpy as np
 import pprint
 import typing
 
-def eulers_method(f: typing.Callable[[float, float], float], initial_conditions: tuple[float, float], h: float, n: int, decimals: int):
+def eulers_method(f: typing.Callable[[float, float], float], initial_conditions: tuple[float, float], h: float, n: int, decimals: int) -> np.matrix:
     
     """
     @param f: function in terms of x, y
